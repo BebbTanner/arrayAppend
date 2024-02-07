@@ -47,6 +47,8 @@ int main(){
 
 	addEntry(myVector);
 
+	deleteEntry(myVector);
+
 	return 0;
 }
 
@@ -57,6 +59,8 @@ void deleteEntry(vector<string>& myVector) {
 	cin >> pos;
 
 	myVector.erase(myVector.begin() + pos);
+
+	cout << endl;
 }
 
 void addEntry(vector<string> &myVector) {
@@ -71,4 +75,6 @@ void addEntry(vector<string> &myVector) {
 	}
 
 	myVector.pop_back();
+
+	cout << endl;
 }
