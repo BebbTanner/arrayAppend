@@ -12,11 +12,19 @@ The popback function will remove the last element that was entered into the vect
 further into how this works to see if I can remove a selected element from the vector rather than just 
 removing the last element from the vector.
 
+The find keyword on line 53 will find a specific element in my declared vector. Find accepts parameters
+the parameters that I gave it would find the begining of myVector and the end of myVector. 
+
+Unsure as to what match does right now.
+
+From how I understand it the auto keyword should automatically match the data type of the variable being 
+used. In this case it should match it to the string data type.
+
 TODO:
 	Initialize a vector - FINISHED
 	Ask the user to input the values in the vector - FINISHED
 	Create a do-while loop that will allow users to finish inputing values - FINISHED
-	Add a pop_back function that will allow users to remove items from the vector
+	Add a function that allows the user to delete certain vector entries - FINISHED
 	Add a for-loop to print out the values stored in the vector - FINISHED
 
 	*/
@@ -26,7 +34,7 @@ TODO:
 #include <string>
 using namespace std;
 
-void deleteEntry(vector<string> &myVector, string match);
+void deleteEntry(vector<string> &myVector, int pos);
 
 void addEntry();
 
@@ -36,23 +44,32 @@ int main() {
 
 	vector<string> myVector = { "Tanner", "Jen", "Aaron", "Steve" };
 
-	deleteEntry(myVector, "Tanner");
+	int pos;
 
-	//What the hell does auto do?
-	for (auto str : myVector) {
-		cout << str << endl;
+	for (int i = 0; i < myVector.size(); i++) {
+		cout << myVector[i] << endl;
 	}
+
+	cout << "Please enter a position you would like to delete(0 - 3): " << endl;
+	cin >> pos;
+
+	deleteEntry(myVector, pos);
+
+	cout << "The new vector is: " << endl;
+	
+	for (int j = 0; j < myVector.size(); j++) {
+		cout << myVector[j] << endl;
+	}
+
+	//for (auto str : myVector) {
+	//	cout << str << endl;
+	//}
 
 	return 0;
 }
 
-void deleteEntry(vector<string> &myVector, string match) {
-	std::vector<string>::iterator it;
-	it = std::find(myVector.begin(), myVector.end(), match);
-
-	if (it != myVector.end()) {
-		myVector.erase(it);
-	}
+void deleteEntry(vector<string>& myVector, int pos) {
+	myVector.erase(myVector.begin() + pos);
 }
 
 void addEntry() {
