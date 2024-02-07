@@ -26,6 +26,9 @@ TODO:
 	Create a do-while loop that will allow users to finish inputing values - FINISHED
 	Add a function that allows the user to delete certain vector entries - FINISHED
 	Add a for-loop to print out the values stored in the vector - FINISHED
+	Add some feature that allows me to use myVector in int main - FINISHED
+		I create the vector in the addEntry function and I would like to 
+		use that in the deleteEntry function.
 
 	*/
 
@@ -34,46 +37,29 @@ TODO:
 #include <string>
 using namespace std;
 
-void deleteEntry(vector<string> &myVector, int pos);
+void deleteEntry(vector<string>& myVector);
 
-void addEntry();
+void addEntry(vector<string> &myVector);
 
-int main() {
+int main(){
 
-	//addEntry();
+	vector<string> myVector;
 
-	vector<string> myVector = { "Tanner", "Jen", "Aaron", "Steve" };
-
-	int pos;
-
-	for (int i = 0; i < myVector.size(); i++) {
-		cout << myVector[i] << endl;
-	}
-
-	cout << "Please enter a position you would like to delete(0 - 3): " << endl;
-	cin >> pos;
-
-	deleteEntry(myVector, pos);
-
-	cout << "The new vector is: " << endl;
-	
-	for (int j = 0; j < myVector.size(); j++) {
-		cout << myVector[j] << endl;
-	}
-
-	//for (auto str : myVector) {
-	//	cout << str << endl;
-	//}
+	addEntry(myVector);
 
 	return 0;
 }
 
-void deleteEntry(vector<string>& myVector, int pos) {
+void deleteEntry(vector<string>& myVector) {
+
+	int pos;
+	cout << "Please enter the position you would like to erase: " << endl;
+	cin >> pos;
+
 	myVector.erase(myVector.begin() + pos);
 }
 
-void addEntry() {
-	vector <string> myVector;
+void addEntry(vector<string> &myVector) {
 
 	cout << "Please enter some names, Press Q to quit: " << endl;
 
@@ -85,10 +71,4 @@ void addEntry() {
 	}
 
 	myVector.pop_back();
-
-	cout << "You have entered: " << myVector.size() << endl;
-
-	for (int i = 0; i < myVector.size(); i++) {
-		cout << myVector[i] << endl;
-	}
 }
