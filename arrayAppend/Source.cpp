@@ -28,25 +28,11 @@ using namespace std;
 
 void deleteEntry(vector<string> &myVector);
 
+void addEntry();
+
 int main() {
-	//vector <string> myVector;
 
-	//cout << "Please enter some names, Press Q to quit: " << endl;
-
-	//string name = "x";
-
-	//while (name != "Q") {
-	//	cin >> name;
-	//	myVector.push_back(name);
-	//}
-
-	//myVector.pop_back();
-
-	//cout << "You have entered: " << myVector.size() << endl;
-
-	//for (int i = 0; i < myVector.size(); i++) {
-	//	cout << myVector[i] << endl;
-	//}
+	//addEntry();
 
 	vector<string> myVector = { "Tanner", "Jen", "Aaron", "Steve" };
 
@@ -56,4 +42,25 @@ int main() {
 void deleteEntry(vector<string> &myVector, string match) {
 	std::vector<string>::iterator it;
 	it = std::find(myVector.begin(), myVector.end(), match);
+}
+
+void addEntry() {
+	vector <string> myVector;
+
+	cout << "Please enter some names, Press Q to quit: " << endl;
+
+	string name = "x";
+
+	while (name != "Q") {
+		cin >> name;
+		myVector.push_back(name);
+	}
+
+	myVector.pop_back();
+
+	cout << "You have entered: " << myVector.size() << endl;
+
+	for (int i = 0; i < myVector.size(); i++) {
+		cout << myVector[i] << endl;
+	}
 }
