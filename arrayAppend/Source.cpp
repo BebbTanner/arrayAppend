@@ -26,7 +26,7 @@ TODO:
 #include <string>
 using namespace std;
 
-void deleteEntry(vector<string> &myVector);
+void deleteEntry(vector<string> &myVector, string match);
 
 void addEntry();
 
@@ -36,12 +36,23 @@ int main() {
 
 	vector<string> myVector = { "Tanner", "Jen", "Aaron", "Steve" };
 
+	deleteEntry(myVector, "Tanner");
+
+	//What the hell does auto do?
+	for (auto str : myVector) {
+		cout << str << endl;
+	}
+
 	return 0;
 }
 
 void deleteEntry(vector<string> &myVector, string match) {
 	std::vector<string>::iterator it;
 	it = std::find(myVector.begin(), myVector.end(), match);
+
+	if (it != myVector.end()) {
+		myVector.erase(it);
+	}
 }
 
 void addEntry() {
