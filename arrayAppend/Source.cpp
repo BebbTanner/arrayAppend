@@ -2,12 +2,18 @@
 After looking into it, it would seem that I cannot do that. So, instead I will be using a vector to that 
 instead.
 
+I believe the pushback() function should be inserting a new element into the vector each time the user
+hits the return key. Using my knowledge from assembly langauge I am guessing that the vector is treated 
+like a stack. When the pushback function is called whatever value is entered by the user will be pushed 
+onto the stack. I am also assuming that when the popback function is called it will remove an item from 
+the vector "popping" it off of the stack. The stack in this case is the vector I have declared called myVector.
+
 TODO:
-	Initialize a vector
-	Ask the user to input the values in the vector
-	Create a do-while loop that will allow users to finish inputing values
+	Initialize a vector - FINISHED
+	Ask the user to input the values in the vector - FINISHED
+	Create a do-while loop that will allow users to finish inputing values - FINISHED
 	Add something that will allow users to remove items from the vector
-	Add a for-loop to print out the values stored in the vector
+	Add a for-loop to print out the values stored in the vector - FINISHED
 
 	*/
 
@@ -16,14 +22,22 @@ TODO:
 using namespace std;
 
 int main() {
-	vector <int> myVector;
+	vector <string> myVector;
 
-	cout << "Please enter some numbers, Press Q to quit: " << endl;
+	cout << "Please enter some names, Press Q to quit: " << endl;
 
-	char breakOut;
+	string name = "x";
 
-	while (breakOut != 'Q' || breakOut != 'q') {
+	//For some reason the condtion will only accept Q and not q.
+	while (name != "Q") {
+		cin >> name;
+		myVector.push_back(name);
+	}
 
+	cout << "You have entered: " << myVector.size() << endl;
+
+	for (int i = 0; i < myVector.size(); i++) {
+		cout << myVector[i] << endl;
 	}
 
 	return 0;
