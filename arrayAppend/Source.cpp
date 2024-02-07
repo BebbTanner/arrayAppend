@@ -1,4 +1,5 @@
-/*Initially I wanted to create a program that allows the user to add and remove values from an array.
+/*
+Initially I wanted to create a program that allows the user to add and remove values from an array.
 After looking into it, it would seem that I cannot do that. So, instead I will be using a vector to that 
 instead.
 
@@ -27,10 +28,7 @@ TODO:
 	Add a function that allows the user to delete certain vector entries - FINISHED
 	Add a for-loop to print out the values stored in the vector - FINISHED
 	Add some feature that allows me to use myVector in int main - FINISHED
-		I create the vector in the addEntry function and I would like to 
-		use that in the deleteEntry function.
-
-	*/
+*/
 
 #include <iostream>
 #include <vector>
@@ -44,10 +42,20 @@ void addEntry(vector<string> &myVector);
 int main(){
 
 	vector<string> myVector;
+	char userChoice;
 
-	addEntry(myVector);
+	cout << "Please Select an option: " << endl;
+	cout << "Create a new vector - C" << endl;
+	cout << "Delete an item from your vector - D" << endl;
+	cin >> userChoice;
 
-	deleteEntry(myVector);
+	if (userChoice == 'C' || userChoice == 'c') {
+		addEntry(myVector);
+	}
+
+	else if (userChoice == 'D' || userChoice == 'd') {
+		deleteEntry(myVector);
+	}
 
 	return 0;
 }
