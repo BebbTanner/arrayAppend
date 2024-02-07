@@ -8,6 +8,10 @@ like a stack. When the pushback function is called whatever value is entered by 
 onto the stack. I am also assuming that when the popback function is called it will remove an item from 
 the vector "popping" it off of the stack. The stack in this case is the vector I have declared called myVector.
 
+The popback function will remove the last element that was entered into the vector. I am going to look
+further into how this works to see if I can remove a selected element from the vector rather than just 
+removing the last element from the vector.
+
 TODO:
 	Initialize a vector - FINISHED
 	Ask the user to input the values in the vector - FINISHED
@@ -33,6 +37,8 @@ int main() {
 		cin >> name;
 		myVector.push_back(name);
 	}
+
+	myVector.pop_back();
 
 	cout << "You have entered: " << myVector.size() << endl;
 
