@@ -16,35 +16,44 @@ TODO:
 	Initialize a vector - FINISHED
 	Ask the user to input the values in the vector - FINISHED
 	Create a do-while loop that will allow users to finish inputing values - FINISHED
-	Add something that will allow users to remove items from the vector
+	Add a pop_back function that will allow users to remove items from the vector
 	Add a for-loop to print out the values stored in the vector - FINISHED
 
 	*/
 
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
+void deleteEntry(vector<string> &myVector);
+
 int main() {
-	vector <string> myVector;
+	//vector <string> myVector;
 
-	cout << "Please enter some names, Press Q to quit: " << endl;
+	//cout << "Please enter some names, Press Q to quit: " << endl;
 
-	string name = "x";
+	//string name = "x";
 
-	//For some reason the condtion will only accept Q and not q.
-	while (name != "Q") {
-		cin >> name;
-		myVector.push_back(name);
-	}
+	//while (name != "Q") {
+	//	cin >> name;
+	//	myVector.push_back(name);
+	//}
 
-	myVector.pop_back();
+	//myVector.pop_back();
 
-	cout << "You have entered: " << myVector.size() << endl;
+	//cout << "You have entered: " << myVector.size() << endl;
 
-	for (int i = 0; i < myVector.size(); i++) {
-		cout << myVector[i] << endl;
-	}
+	//for (int i = 0; i < myVector.size(); i++) {
+	//	cout << myVector[i] << endl;
+	//}
+
+	vector<string> myVector = { "Tanner", "Jen", "Aaron", "Steve" };
 
 	return 0;
+}
+
+void deleteEntry(vector<string> &myVector, string match) {
+	std::vector<string>::iterator it;
+	it = std::find(myVector.begin(), myVector.end(), match);
 }
