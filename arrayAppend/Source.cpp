@@ -34,7 +34,7 @@ Feb 12 TODO:
 		Print out vector values
 		add items to the vector
 		delete items from the vector
-	Create a function that Prints out the vector values.
+	Create a function that Prints out the vector values. - FINISHED
 */
 
 #include <iostream>
@@ -53,14 +53,10 @@ int main(){
 	vector<string> myVector;
 
 	addEntry(myVector);
-
 	cout << endl;
 
-	/*For loop that will print out the values stored in myVector.
-	This is for testing purposes*/
-	//for (int i = 0; i < myVector.size(); i++) {
-	//	cout << myVector[i] << endl;
-	//}
+	myVectorValues(myVector);
+	cout << endl;
 
 	return 0;
 }
@@ -80,18 +76,29 @@ void addEntry(vector<string> &myVector) {
 
 	cout << "Please enter some names, Press Q to quit: " << endl;
 
-	string name = "x";
+	string name;
 
+	/*While loop that will allow the user to add values to the vector.
+	If the user enters "Q", then it will break out of the loop*/
 	while (name != "Q") {
 		cin >> name;
 		myVector.push_back(name);
 	}
 
+	/*This will remove the last value that was entered in the array.
+	In this case it should be "Q" since that is the last thing the user enters.
+	I did this because when printing out the values in the vector I do not want 
+	to include Q since it was used to breakout of the statement and is not a value.*/
 	myVector.pop_back();
 
 	cout << endl;
 }
 
+/*This function will print out the values that are currently stored 
+in the vector. For now this function is really just for testing purposes.*/
 void myVectorValues(vector<string>& myVector) {
-
+	
+	for (int i = 0; i < myVector.size(); i++) {
+		cout << myVector[i] << endl;
+	}
 }
