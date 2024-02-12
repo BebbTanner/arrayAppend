@@ -28,6 +28,13 @@ TODO:
 	Add a function that allows the user to delete certain vector entries - FINISHED
 	Add a for-loop to print out the values stored in the vector - FINISHED
 	Add some feature that allows me to use myVector in int main - FINISHED
+
+Feb 12 TODO:
+	Create a nested if-else that will allow the user to make a choice
+		Print out vector values
+		add items to the vector
+		delete items from the vector
+	Create a function that Prints out the vector values.
 */
 
 #include <iostream>
@@ -39,23 +46,21 @@ void deleteEntry(vector<string>& myVector);
 
 void addEntry(vector<string> &myVector);
 
+void myVectorValues(vector<string>& myVector);
+
 int main(){
 
 	vector<string> myVector;
-	char userChoice;
 
-	cout << "Please Select an option: " << endl;
-	cout << "Create a new vector - C" << endl;
-	cout << "Delete an item from your vector - D" << endl;
-	cin >> userChoice;
+	addEntry(myVector);
 
-	if (userChoice == 'C' || userChoice == 'c') {
-		addEntry(myVector);
-	}
+	cout << endl;
 
-	else if (userChoice == 'D' || userChoice == 'd') {
-		deleteEntry(myVector);
-	}
+	/*For loop that will print out the values stored in myVector.
+	This is for testing purposes*/
+	//for (int i = 0; i < myVector.size(); i++) {
+	//	cout << myVector[i] << endl;
+	//}
 
 	return 0;
 }
@@ -85,4 +90,8 @@ void addEntry(vector<string> &myVector) {
 	myVector.pop_back();
 
 	cout << endl;
+}
+
+void myVectorValues(vector<string>& myVector) {
+
 }
