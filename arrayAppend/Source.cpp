@@ -42,7 +42,7 @@ Feb 12 TODO:
 #include <string>
 using namespace std;
 
-void deleteEntry(vector<string>& myVector);
+void removeEntry(vector<string>& myVector);
 
 void addEntry(vector<string> &myVector);
 
@@ -51,17 +51,34 @@ void myVectorValues(vector<string>& myVector);
 int main(){
 
 	vector<string> myVector;
+	char userChoice;
 
-	addEntry(myVector);
-	cout << endl;
+	cout << "Please choose an option: " << endl;
+	cout << "A - addEntry " << endl;
+	cout << "R - removeEntry " << endl;
+	cout << "V - myVectorValues " << endl;
+	cout << "D - Description of the listed functions " << endl;
 
-	myVectorValues(myVector);
-	cout << endl;
+	if (userChoice == '' || userChoice == '') {
+
+	}
+
+	else if (userChoice == '' || userChoice == '') {
+
+	}
+
+	else if (userChoice == '' || userChoice == '') {
+
+	}
+
+	else if (userChoice == '' || userChoice == '') {
+
+	}
 
 	return 0;
 }
 
-void deleteEntry(vector<string>& myVector) {
+void removeEntry(vector<string>& myVector) {
 
 	int pos;
 	cout << "Please enter the position you would like to erase: " << endl;
