@@ -58,21 +58,27 @@ int main(){
 	cout << "R - removeEntry " << endl;
 	cout << "V - myVectorValues " << endl;
 	cout << "D - Description of the listed functions " << endl;
+	cin >> userChoice;
 
-	if (userChoice == '' || userChoice == '') {
-
+	if (userChoice == 'A' || userChoice == 'a') {
+		addEntry(myVector);
+		cout << endl;
 	}
 
-	else if (userChoice == '' || userChoice == '') {
-
+	else if (userChoice == 'R' || userChoice == 'r') {
+		removeEntry(myVector);
+		cout << endl;
 	}
 
-	else if (userChoice == '' || userChoice == '') {
-
+	else if (userChoice == 'V' || userChoice == 'v') {
+		myVectorValues(myVector);
+		cout << endl;
 	}
 
-	else if (userChoice == '' || userChoice == '') {
-
+	else if (userChoice == 'D' || userChoice == 'd') {
+		cout << "addEntry will allow you to add new values to a new vector." << endl;
+		cout << "removeEntry will allow you to remove items from the vector that you have created." << endl;
+		cout << "myVectorValues will print out the current values stored in the vector." << endl;
 	}
 
 	return 0;
