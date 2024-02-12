@@ -28,13 +28,23 @@ TODO:
 	Add a function that allows the user to delete certain vector entries - FINISHED
 	Add a for-loop to print out the values stored in the vector - FINISHED
 	Add some feature that allows me to use myVector in int main - FINISHED
-
-Feb 12 TODO:
-	Create a nested if-else that will allow the user to make a choice
-		Print out vector values
-		add items to the vector
-		delete items from the vector
+	Create a nested if-else that will allow the user to make a choice - FINISHED
+		Print out vector values - FINISHED
+		add items to the vector - FINISHED
+		delete items from the vector - FINISHED
 	Create a function that Prints out the vector values. - FINISHED
+	Create a function for the user choice
+
+I need to figure out how to allow the user to return to the main function. 
+What I would like to do is after the selected function is executed return the 
+user to the choice function. This would allow them to see the values they 
+entered into the vector. I believe I need to use the return keyword to 
+in those functions to return to int main.
+
+I changed the data type of all of the functions to int. Because I did this
+I am now able to return to the main function. The problem is that when I entered
+the values for myVector and then tried to print them after returning to main, it
+did not save the values I entered.
 */
 
 #include <iostream>
@@ -42,11 +52,11 @@ Feb 12 TODO:
 #include <string>
 using namespace std;
 
-void removeEntry(vector<string>& myVector);
+int removeEntry(vector<string>& myVector);
 
-void addEntry(vector<string> &myVector);
+int addEntry(vector<string> &myVector);
 
-void myVectorValues(vector<string>& myVector);
+int myVectorValues(vector<string>& myVector);
 
 int main(){
 
@@ -84,7 +94,7 @@ int main(){
 	return 0;
 }
 
-void removeEntry(vector<string>& myVector) {
+int removeEntry(vector<string>& myVector) {
 
 	int pos;
 	cout << "Please enter the position you would like to erase: " << endl;
@@ -93,9 +103,11 @@ void removeEntry(vector<string>& myVector) {
 	myVector.erase(myVector.begin() + pos);
 
 	cout << endl;
+
+	return main();
 }
 
-void addEntry(vector<string> &myVector) {
+int addEntry(vector<string> &myVector) {
 
 	cout << "Please enter some names, Press Q to quit: " << endl;
 
@@ -115,13 +127,18 @@ void addEntry(vector<string> &myVector) {
 	myVector.pop_back();
 
 	cout << endl;
+
+	return main();
+
 }
 
 /*This function will print out the values that are currently stored 
 in the vector. For now this function is really just for testing purposes.*/
-void myVectorValues(vector<string>& myVector) {
+int myVectorValues(vector<string>& myVector) {
 	
 	for (int i = 0; i < myVector.size(); i++) {
 		cout << myVector[i] << endl;
 	}
+
+	return main();
 }
